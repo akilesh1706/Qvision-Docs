@@ -88,9 +88,13 @@
 <h1>Qvision Documentation<a class="headerlink" href="#qvision-documentation" title="Link to this heading"></a></h1>
 <p>Qvision is a powerful tool that enables network analysis and infrastructure monitoring. It allows you to <strong>scan, analyze, and extract network data</strong> in a structured manner. Whether you’re using AWS or an on-premises environment, Qvision offers a seamless way to manage network mirroring sessions and extract valuable insights.</p>
 <p>Click the <strong>“Get Started”</strong> button to begin.</p>
+<a class="reference internal image-reference" href="_images/GetStarted_0.png"><img alt="Qvision Get Started" class="align-center" src="_images/GetStarted_0.png" style="width: 600px;" />
+</a>
 </section>
 <section id="infrastructure-setup">
 <h1><strong>Infrastructure Setup</strong><a class="headerlink" href="#infrastructure-setup" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="_images/InfraSetup_Options.png"><img alt="Qvision Get Started" class="align-center" src="_images/InfraSetup_Options.png" style="width: 600px;" />
+</a>
 <p>Before you start using Qvision, you need to configure the infrastructure based on your deployment model. Qvision supports two primary environments:</p>
 <section id="aws">
 <h2>AWS<a class="headerlink" href="#aws" title="Link to this heading"></a></h2>
@@ -110,16 +114,25 @@
 <li><p><strong>Configuring network taps</strong> to monitor traffic.</p></li>
 <li><p><strong>Manually specifying infrastructure details</strong> for accurate data extraction.</p></li>
 </ul>
-<p>After selecting the appropriate setup, click <strong>“Verify CLI”</strong> to ensure the configuration is correct. If necessary, update the credentials by clicking <strong>“Reset Credentials”</strong>, then enter:</p>
+<p>After selecting the appropriate setup, click <strong>“Verify CLI”</strong> to ensure the configuration is correct.</p>
+<a class="reference internal image-reference" href="_images/Before_CLISetup_1.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/Before_CLISetup_1.jpeg" style="width: 600px;" />
+</a>
+<a class="reference internal image-reference" href="_images/CLIVerified_2.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/CLIVerified_2.jpeg" style="width: 600px;" />
+</a>
+<p>If necessary, update the credentials by clicking <strong>“Reset Credentials”</strong>, then enter:</p>
 <ul class="simple">
 <li><p>AWS access key ID</p></li>
 <li><p>Secret access key</p></li>
 <li><p>Region</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/ResetAWSCreds_3.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/ResetAWSCreds_3.jpeg" style="width: 600px;" />
+</a>
 <p>Once the credentials are updated, click <strong>“Continue Setup.”</strong></p>
 </section>
 <section id="choosing-scan-option">
 <h2>Choosing Scan Option<a class="headerlink" href="#choosing-scan-option" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="_images/Choose_ScanOption_4.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/Choose_ScanOption_4.jpeg" style="width: 600px;" />
+</a>
 <p>After setting up the infrastructure, the next step is to choose the <strong>scanning method</strong>. Qvision offers two options:</p>
 <section id="network-scan">
 <h3>Network Scan<a class="headerlink" href="#network-scan" title="Link to this heading"></a></h3>
@@ -144,10 +157,14 @@
 <p>Unsupported EC2 instances will be <strong>marked with a red exclamation symbol</strong> in the interface.</p>
 <p>The <strong>“Network Visualization”</strong> tab provides an <strong>interactive network map</strong>, giving users a <strong>clear representation of the infrastructure</strong>.</p>
 <p>Click <strong>“Continue Mirroring”</strong> to proceed to the <strong>Mirroring Session Configuration</strong> section.</p>
+<a class="reference internal image-reference" href="_images/SelectingEC2_BeforeMirroring_6.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/SelectingEC2_BeforeMirroring_6.jpeg" style="width: 600px;" />
+</a>
 </section>
 <section id="mirroring-session-configuration">
 <h1><strong>Mirroring Session Configuration</strong><a class="headerlink" href="#mirroring-session-configuration" title="Link to this heading"></a></h1>
 <p>In this step, you will configure the mirroring targets and connectivity settings. The mirroring session is essential for <strong>capturing and analyzing network traffic</strong>.</p>
+<a class="reference internal image-reference" href="_images/MirrorSessionConfig_7.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/MirrorSessionConfig_7.jpeg" style="width: 600px;" />
+</a>
 <p>Qvision allows mirroring within:</p>
 <ul class="simple">
 <li><p><strong>The same VPC but different subnets</strong>.</p></li>
@@ -156,14 +173,17 @@
 <p>To ensure proper routing, you need to:</p>
 <ul class="simple">
 <li><p><strong>Choose a routing table</strong>, selecting either <strong>Local Routing</strong> or an <strong>Internet Gateway</strong>.</p></li>
-<li><p><strong>Specify the CIDR range</strong> for the new subnet to define the network scope.</p></li>
+<li><p><strong>Specify the CIDR range</strong> for the new subnet to define the network scope. For example, the 244.178.0.0/16 subnet gives you a range of IP addresses from 244.178.0.0 to 244.178.255.255. The first address (244.178.0.0) is reserved as the network ID, and the last one (244.178.255.255) is used for broadcasting messages to all devices in the network. This means you can use any IP from 244.178.0.1 to 244.178.255.254 for computers, servers, or other devices.</p></li>
 </ul>
 <p>For <strong>advanced users</strong>, Qvision provides customization options:</p>
 <ul class="simple">
 <li><p>Select specific <strong>EC2 instance types</strong> to optimize performance.</p></li>
 <li><p>Choose <strong>Amazon Machine Images (AMIs)</strong> for the mirrored instances.</p></li>
 </ul>
-<p>Once all configurations are finalized, click <strong>“Confirm Configuration”</strong>. Qvision will use <strong>Terraform and Ansible</strong> to deploy the mirroring session. The log section will display <strong>real-time updates</strong> on the setup process.</p>
+<p>Once all configurations are finalized, click <strong>“Confirm Configuration”</strong>. Qvision will use <strong>Terraform and Ansible</strong> to deploy the mirroring session. The log section will display <strong>real-time updates</strong> on the setup process.
+You can also view the system logs by clicking the tab.</p>
+<a class="reference internal image-reference" href="_images/Building_SystemLogs_8.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/Building_SystemLogs_8.jpeg" style="width: 600px;" />
+</a>
 </section>
 <section id="process-information">
 <h1><strong>Process Information</strong><a class="headerlink" href="#process-information" title="Link to this heading"></a></h1>
@@ -173,6 +193,8 @@
 <li><p><strong>Subnet structures</strong></p></li>
 <li><p><strong>EC2 instances connected to the session</strong></p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/ProcessInfo_BeforeExtraction_9.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/ProcessInfo_BeforeExtraction_9.jpeg" style="width: 600px;" />
+</a>
 <p>After verifying the setup, click <strong>“Start Extraction”</strong> to proceed.</p>
 </section>
 <section id="extraction-settings">
@@ -187,6 +209,8 @@
 <li><p><strong>Capture duration</strong> to define how long the extraction should run.</p></li>
 <li><p><strong>Repetition settings</strong> to configure recurring extractions.</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/ConfigureExtractionJob_10.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/ConfigureExtractionJob_10.jpeg" style="width: 600px;" />
+</a>
 <p>Click <strong>“Start Extraction”</strong> to initiate the extraction process.</p>
 </section>
 <section id="extraction-status">
@@ -197,8 +221,11 @@
 <li><p><strong>Installing dependencies</strong> required for traffic monitoring.</p></li>
 <li><p><strong>Starting the extraction process</strong> and capturing packets.</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/ConfiguringEnvironment_11.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/ConfiguringEnvironment_11.jpeg" style="width: 600px;" />
+</a>
 <p>The progress bar will indicate the <strong>status of the extraction</strong>. Once the extraction reaches <strong>100% completion</strong>, users can download the <strong>PCAP files</strong> for further analysis.</p>
-<p>These extracted files can then be analyzed using <strong>Wireshark or other network monitoring tools</strong> for <strong>deep packet inspection</strong>.</p>
+<a class="reference internal image-reference" href="_images/Done_12.jpeg"><img alt="Qvision Get Started" class="align-center" src="_images/Done_12.jpeg" style="width: 600px;" />
+</a>
 <div class="toctree-wrapper compound">
 </div>
 </section>
