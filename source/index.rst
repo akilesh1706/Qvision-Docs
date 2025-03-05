@@ -118,6 +118,9 @@ The **"Network Visualization"** tab provides an **interactive network map**, giv
 
 Click **"Continue Mirroring"** to proceed to the **Mirroring Session Configuration** section.
 
+**Note:** If you want to connect to the EC2 via SSH, copy the IP address and use it. For the
+attached picture, the IP is 13.213.66.100. 
+
 .. image:: _static/SelectingEC2_BeforeMirroring_6.jpeg
    :alt: Qvision Get Started
    :width: 600px
